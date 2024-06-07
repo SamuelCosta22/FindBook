@@ -9,7 +9,7 @@ export function Header(){
             <Container>
                 <HeaderTitle />
                 <div className='mt-28 bg-cover bg-center bg-no-repeat'>
-                    <p className='text-7xl font-bold text-evergreen'>Encontre livros <br/> que sejam a sua cara!</p>
+                    <p className='md:text-7xl text-xl font-bold text-evergreen'>Encontre livros <br/> que sejam a sua cara!</p>
                     <p className='text-gray-500 my-5 text-xl'>Lorem ipsum</p>
                     <Button title='Pesquisar livros' />
                 </div>

@@ -10,8 +10,8 @@ type Props = {
 export function Button({ title, className, variant='dark', onClick }: Props){
     return(
         <button className={classNames([
-            'bg-evergreen-light text-white font-medium px-6 py-2 rounded-lg shadow mt-3',
-            variant === 'dark' && 'bg-evergreen-light',
+            'bg-evergreen-light font-medium px-6 py-2 rounded-lg shadow mt-3',
+            variant === 'dark' && 'bg-evergreen-light text-white',
             variant === 'light' && 'bg-white border-2 border-evergreen-light text-evergreen-light',
             className
         ])} onClick={onClick}>

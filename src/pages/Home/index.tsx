@@ -3,6 +3,8 @@ import { Button } from "../../components/Button/Button";
 import { Container } from "../../components/Container/Container";
 import { Header } from "../../components/Header/Header";
 import { Title } from "../../components/Title/Title";
+import { Card } from "../../components/Card/Card";
+import { Input } from "../../components/Input/Input";
 
 const genderBooks = [
     'Ação',
@@ -26,20 +28,22 @@ export function Home(){
     }, [selectedGender])
 
     return(
-    <>
+    <div className="mb-8">
         <Header />
         <Container>
           <Title title="O que você quer ler hoje?" />
-          <div className="gap-8 grid grid-cols-8 my-6">
-            {genderBooks.map(book => (
-                <Button title={book} variant={selectedGender.includes(book) ? 'dark' : 'light' } onClick={() => handleSelected(book)} />
+          <div className="gap-8 grid md:grid-cols-8 grid-cols-4 my-6">
+            {genderBooks.map((book, index) => (
+                <Button key={index} title={book} variant={selectedGender.includes(book) ? 'dark' : 'light' } onClick={() => handleSelected(book)} />
             ))}
           </div>
-          <div className="pt-7">
+          <div className="py-7">
             <p className="text-evergreen font-semibold text-2xl">Sobre o que você gostaria de receber uma recomendação de livro?</p>
-            <input type="text" placeholder="Eu gostaria de ler..." className="outline-none shadow-lg border border-gray-100 rouded-lg w-full p-3" />
+            <Input placeholder="Eu gostaria de ler..." />
           </div>
+          <Title className="my-5" title="Livros recomendados" />
+          <Card id="123" />
         </Container>
-      </>
+      </div>
     )
 }
